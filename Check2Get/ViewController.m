@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -24,4 +25,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)abrirPaginaPressed:(UIButton *)sender {
+    NSString * url = @"http://check2get.com";
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 @end
